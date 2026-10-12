@@ -1,0 +1,3 @@
+*.o
+gbemu
+.DS_Store
