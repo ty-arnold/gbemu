@@ -1,3 +1,5 @@
 *.o
 gbemu
 .DS_Store
+*.gb
+*.dSYM/
