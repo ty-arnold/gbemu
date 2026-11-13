@@ -66,7 +66,6 @@ int main(int argc, char *argv[]) {
 	set_flag(&test_state.af.low, FLAG_Z);
 	printf("set_flag = %02x\n", test_state.af.low);
 
-
 	//cleanup
 	free(rom);
 	fclose(fp);
