@@ -25,8 +25,8 @@ Each row ends in something observable. Don't start row N+1 until row N's
 |----|-------------------------------------|------------------------------------------------------------------|------------------------------------------|
 | 0  | ✅ **Multi-file project**           | `make` builds `main.c` + `cart.c` into one binary                | `.h`/`.c` split, include guards, Makefile |
 | 1  | ✅ **ROM loader**                   | Any ROM loads to a heap buffer; header prints; `free` runs clean | `malloc`/`free`, `fseek`/`ftell`, out-params |
-| 2  | **Memory bus**                      | `bus_read8(0x0100)` returns the byte seen in the hex dump        | address decoding, region dispatch        |
-| 3  | **CPU state**                       | `AF/BC/DE/HL` readable as pairs *and* halves; flags set/clear    | `union`, bit masks, `<<` `>>` `&` `\|`    |
+| 2  | ✅ **Memory bus**                   | `bus_read8(0x0100)` returns the byte seen in the hex dump        | address decoding, region dispatch        |
+| 3  | ✅ **CPU state**                       | `AF/BC/DE/HL` readable as pairs *and* halves; flags set/clear    | `union`, bit masks, `<<` `>>` `&` `\|`    |
 | 4  | **Fetch-decode-execute + ~25 ops**  | Logs `PC`, opcode, registers each step; hand-verified vs. disassembly | big `switch`, function pointers (optional) |
 | 5  | **Blargg `01-special.gb` passes**   | Serial output prints `Passed`                                    | debugging by differential testing        |
 | 6  | **All 11 `cpu_instrs` tests pass**  | All print `Passed` — **the real milestone**                      | sustained systematic debugging           |
@@ -60,7 +60,7 @@ Check byte `0x147` before trusting any ROM as a test case.
 
 ## Carried over from `romheader`
 
-`parse_header`, the `RomHeader` struct, and the three `decode_*` tables survive
+`parse_header`, the `rom_header` struct, and the three `decode_*` tables survive
 into milestone 1 essentially unchanged.
 
 ## Open design questions

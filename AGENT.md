@@ -20,7 +20,7 @@ Building a Game Boy emulator in C, from scratch, as a learning vehicle.
 
 A completed, working cartridge-header reader (~150 lines, single file). This was
 the intro project and is where all the C learning below happened. It contains
-`parse_header`, a `RomHeader` struct, and three `decode_*` lookup tables that
+`parse_header`, a `rom_header` struct, and three `decode_*` lookup tables that
 carry over to milestone 1 essentially unchanged. Worth reading for context on
 Tyler's actual code style and level.
 

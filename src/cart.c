@@ -74,9 +74,9 @@ const char *decode_cart_type(uint8_t code) {
 	}
 }
 
-RomHeader parse_header(const uint8_t *buf)
+rom_header parse_header(const uint8_t *buf)
 {
-	RomHeader h;
+	rom_header h;
 	for (int i = 0; i <16; i++) {
 		uint8_t ch = buf[TITLE + i];
 		h.title[i] = ch;

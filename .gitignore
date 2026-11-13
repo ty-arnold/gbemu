@@ -3,3 +3,4 @@ gbemu
 .DS_Store
 *.gb
 *.dSYM/
+roms/
